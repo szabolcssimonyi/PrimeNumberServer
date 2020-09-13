@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PrimeNumber.Api</name>
+    </assembly>
+    <members>
+        <member name="T:PrimeNumber.Api.Controllers.PrimeNumberController">
+            <summary>
+            Controller for prime number calculation
+            </summary>
+        </member>
+        <member name="M:PrimeNumber.Api.Controllers.PrimeNumberController.IsPrimeNumber(System.Int32)">
+            <summary>
+            Evaluates if test value is a prime number
+            </summary>
+            <param name="value">Test number</param>
+            <returns>200 Ok, 400 Bad request, or 500 Internal server error</returns>
+            <response code="200">Returns the evaluated value</response>
+            <response code="400">If the item is null, out of server range</response>
+            <response code="500">At internal server error</response>
+        </member>
+        <member name="M:PrimeNumber.Api.Controllers.PrimeNumberController.NextPrimeNumber(System.Int32)">
+            <summary>
+            Search for next prime number greater than test number
+            </summary>
+            <param name="value">Test number</param>
+            <returns>200 Ok, 400 Bad request, or 500 Internal server error</returns>
+            <response code="200">Returns the evaluated value</response>
+            <response code="400">If the item is null or test number is out of server range, or next prime number generates out of range error</response>
+            <response code="500">At internal server error</response>
+        </member>
+    </members>
+</doc>

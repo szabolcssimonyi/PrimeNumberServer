@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  primenumber.api:
+    image: ${DOCKER_REGISTRY-}primenumberapi
+    build:
+      context: .
+      dockerfile: PrimeNumber.Api/Dockerfile
+    environment:
+      - CacheName=primenumber.cache
+    ports:
+      - "80:80"
+    networks:
+        - primenumber.api.net
+
+networks:
+    primenumber.api.net:
+        name: primenumber.net

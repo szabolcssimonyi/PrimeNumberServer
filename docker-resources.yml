@@ -1,0 +1,49 @@
+version: '3.5'
+
+volumes:
+    primenumber.log.data: 
+
+services:
+            
+    primenumber.log:
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.4.0
+        container_name: primenumber.log
+        environment:
+            - cluster.name=docker-cluster
+            - bootstrap.memory_lock=true
+            - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+        ports:
+            - "9200:9200"
+        volumes:
+            - primenumber.log.data:/usr/share/elasticsearch/data
+        networks:
+            - primenumber.resource.net
+        
+    primenumber.log.admin:
+        image: docker.elastic.co/kibana/kibana:6.4.0
+        container_name: primenumber.log.admin
+        environment:
+            SERVER_NAME: localhost
+            ELASTICSEARCH_URL: http://primenumber.log:9200
+        ports:
+            - "887:5601"
+        depends_on:
+            - primenumber.log
+        networks:
+            - primenumber.resource.net
+            
+    primenumber.cache:
+        image: redis
+        container_name: primenumber.cache
+        ports:
+            - "6379:6379"
+        networks:
+            - primenumber.resource.net
+
+networks:
+    primenumber.resource.net:
+        name: primenumber.net

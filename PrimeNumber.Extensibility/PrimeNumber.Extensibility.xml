@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PrimeNumber.Extensibility</name>
+    </assembly>
+    <members>
+        <member name="T:PrimeNumber.Extensibility.Dto.ExceptionDto">
+            <summary>
+            Exception transfer object
+            </summary>
+        </member>
+        <member name="P:PrimeNumber.Extensibility.Dto.ExceptionDto.Message">
+            <summary>
+            Exception message
+            </summary>
+        </member>
+        <member name="P:PrimeNumber.Extensibility.Dto.ExceptionDto.Code">
+            <summary>
+            Status code
+            </summary>
+        </member>
+        <member name="P:PrimeNumber.Extensibility.Dto.ExceptionDto.Exception">
+            <summary>
+            Exception detail object
+            </summary>
+        </member>
+        <member name="T:PrimeNumber.Extensibility.Dto.IsPrimeNumberDto">
+            <summary>
+            Is prime number result transfer object
+            </summary>
+        </member>
+        <member name="P:PrimeNumber.Extensibility.Dto.IsPrimeNumberDto.TestNumber">
+            <summary>
+            Origin number
+            </summary>
+        </member>
+        <member name="P:PrimeNumber.Extensibility.Dto.IsPrimeNumberDto.IsPrimeNumber">
+            <summary>
+            Is prime calculation result
+            </summary>
+        </member>
+        <member name="T:PrimeNumber.Extensibility.Dto.NextPrimeNumberDto">
+            <summary>
+            Next prime number result transfer object
+            </summary>
+        </member>
+        <member name="P:PrimeNumber.Extensibility.Dto.NextPrimeNumberDto.NextPrimeNumber">
+            <summary>
+            Next prime number
+            </summary>
+        </member>
+        <member name="P:PrimeNumber.Extensibility.Dto.NextPrimeNumberDto.TestNumber">
+            <summary>
+            Origin number
+            </summary>
+        </member>
+    </members>
+</doc>

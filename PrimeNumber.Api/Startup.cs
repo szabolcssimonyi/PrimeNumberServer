@@ -15,6 +15,7 @@ using System.Reflection;
 
 namespace PrimeNumber.Api
 {
+    // test modosítás feature 01-ben
     public class Startup
     {
         public static Autofac.Module AutofacModule;
